@@ -1,0 +1,9 @@
+{% extends 'patient/base_Doc.html' %}
+{% block content %}
+    <h1 style="text-align:center; padding:20">Profile</h1>
+    <form method="post" style="text-align: center;">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button style="top: 55%; left: 50%" type="submit" class="btn btn-primary">Update</button>
+  </form>
+{% endblock %}

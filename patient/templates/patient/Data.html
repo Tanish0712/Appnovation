@@ -1,0 +1,16 @@
+{% extends 'patient/base.html' %}
+{% block content %}
+{% if object_list %}
+    <div class="class_card row">
+        {% for obj in object_list %}
+            <div class="card w-50">
+                <div class="card-body">
+                    <h5 class="card-title">{{obj.Title}}</h5>
+                    <a href="http://127.0.0.1:8000/media/{ obj.File }}" , class="btn btn-primary">View file</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+<a href="{% url 'AddFile' %}"  style="text-align: center"  class="btn btn-primary">Add file</a>
+{% endblock %}
